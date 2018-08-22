@@ -1,0 +1,13 @@
+.field-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    padding: 20px 50px;
+}
+.field {
+    padding: 5px;
+}
+
+svg > polygon {
+    transition: fill 0.2s ease;
+}

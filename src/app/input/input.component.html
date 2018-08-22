@@ -1,0 +1,16 @@
+<div class="field-parent">
+  <div class="field" *ngFor="let i of [0, 1, 2]">
+    <svg viewBox="0 0 20 20">
+      <polygon #shape1 points="15,10 15,10.5 5,10.5 5,10 5,9.5 15,9.5" fill="#222">
+        <animate id="default" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="15,10 15,10.5 5,10.5 5,10 5,9.5 15,9.5" />
+        <animate id="square" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="18.67,10 18.67,18.67 1.33,18.67 1.33,10 1.33,1.33 18.67,1.33" />
+        <animate id="rectangle" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="18.67,10 18.67,13.67 1.33,13.67 1.33,10 1.33,6.33 18.67,6.33"/>
+        <animate id="hexagon" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="20,10 15,18.67 5,18.67 0,10 5,1.33 15,1.33"/>
+        <animate id="parallelogram" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="15,10 20,18.67 10,18.67 5,10 0,1.33 10,1.33"/> 
+        <animate id="triangle" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="15,10 20,18.66 0,18.66 5,10 10,1.34 10,1.34"/>
+      </polygon>
+    </svg>
+  </div>
+</div>
+<app-loader></app-loader>
+<app-keyboard></app-keyboard>
