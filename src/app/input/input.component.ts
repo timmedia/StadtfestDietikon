@@ -9,7 +9,7 @@ import { InputService } from '../input.service';
 export class InputComponent implements OnInit {
   @ViewChildren('shape1') shape1;
   charMap = ['square', 'hexagon', 'rectangle', 'triangle', 'parallelogram'];
-  colourMap = ['#f50057', '#d500f9', '#00e676', '#ffeb3b', '#ff9800']
+  colourMap = ['#f50057', '#d500f9', '#00e676', '#ffe81d', '#ff9800']
   code: string = '';
   
 
