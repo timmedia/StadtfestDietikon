@@ -1,1 +1,19 @@
-<app-input></app-input>
+<div class="viewport">
+    <div class="main-window" #main>
+        <app-input></app-input>
+    </div>
+    <div class="side-panel" #side>
+        <div class="toolbar">
+            <div class="back-button" (click)="closeSidebar()">
+                <svg viewBox="0 0 64 24">
+                    <path d="M15.41,16.59L10.83,12l4.58-4.59L14,6l-6,6l6,6L15.41,16.59z" fill="white" />
+                    <path fill="none" d="M0,0h24v24H0V0z"/>
+                    <text x="22" y="15.6" style="font-size: 10px;" fill="white">ZURÜCK</text>
+                </svg>
+            </div>
+            <a>{{ sidePanelTitle  }}</a>
+        </div>
+        <app-help *ngIf="sidePanelPage === 'help'"></app-help>
+        <app-map *ngIf="sidePanelPage === 'map'"></app-map>
+    </div>
+</div>

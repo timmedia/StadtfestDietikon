@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InputService } from '../input.service';
+import { PageService } from '../page.service';
 
 @Component({
   selector: 'app-keyboard',
@@ -8,7 +9,7 @@ import { InputService } from '../input.service';
 })
 export class KeyboardComponent implements OnInit {
 
-  constructor(private inputService: InputService) { }
+  constructor(private inputService: InputService, private pageService: PageService) { }
 
   ngOnInit() {
   }
@@ -19,6 +20,10 @@ export class KeyboardComponent implements OnInit {
 
   resetCode() {
     this.inputService.setReset(true);
+  }
+
+  setPage(id: string, title: string) {
+    this.pageService.setPage(id, title);
   }
 
 }

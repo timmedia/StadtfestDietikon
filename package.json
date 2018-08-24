@@ -22,6 +22,7 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "@types/googlemaps": "^3.30.11",
     "@types/snapsvg": "^0.4.34",
     "core-js": "^2.4.1",
     "imports-loader": "^0.8.0",
