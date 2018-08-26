@@ -1,3 +1,10 @@
+<div class="overlay overlay-hidden" #overlay>
+    <div class="modal modal-hidden" #modal>
+        <h1>{{ modalText.title }}</h1>
+        <p>{{ modalText.content }}</p>
+        <button (click)="switchModal(false)">Okay</button>
+    </div>
+</div>
 <div class="viewport">
     <div class="main-window" #main>
         <app-input></app-input>
@@ -15,5 +22,6 @@
         </div>
         <app-help *ngIf="sidePanelPage === 'help'"></app-help>
         <app-map *ngIf="sidePanelPage === 'map'"></app-map>
+        <app-video *ngIf="sidePanelPage === 'video'"></app-video>
     </div>
 </div>

@@ -33,12 +33,14 @@ export class InputComponent implements OnInit {
       const element = this.shape1._results[pos].nativeElement;
       element.style.fill = this.colourMap[index]
       element.children[this.charMap[index]].beginElement();
+      if (this.code.length > 2) {
+        this.inputService.validateInput(this.code);
+      }
     }
   }
 
   resetCode(type: boolean) {
     if (type) {
-      console.log(this.code)
       let len = this.code.length;
       for (let index = 0; index < len; index++) {
         const element = this.shape1._results[index].nativeElement;

@@ -11,6 +11,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { HelpComponent } from './help/help.component';
 import { PageService } from './page.service';
 import { MapComponent } from './map/map.component';
+import { VideoComponent } from './video/video.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MapComponent } from './map/map.component';
     InputComponent,
     LoaderComponent,
     HelpComponent,
-    MapComponent
+    MapComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,

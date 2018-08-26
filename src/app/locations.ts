@@ -10,3 +10,5 @@ export const Locations = [
     { lat: 47.405658, lng: 8.399680, title: 'Henkersgasse', code: '410' },
     { lat: 47.401588, lng: 8.403312, title: 'Glocke / Ortsmuseum', code: '231' }
 ]
+
+export const Codes = [ '014', '134', '021', '042', '203', '342', '304', '123', '410', '231' ];

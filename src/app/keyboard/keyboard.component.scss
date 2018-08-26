@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: row;
     justify-content: end;
-    max-height: calc(66.67% + 30px);
+    padding: 0px 25%;
 }
 
 @media screen and (max-width: 599px) {
@@ -49,6 +49,7 @@
     }
     .help {
         grid-column: auto / span 2;
+        padding: inherit;
         svg {
             max-height: auto;
         }
