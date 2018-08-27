@@ -12,6 +12,7 @@ import { HelpComponent } from './help/help.component';
 import { PageService } from './page.service';
 import { MapComponent } from './map/map.component';
 import { VideoComponent } from './video/video.component';
+import { GuestbookComponent } from './guestbook/guestbook.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { VideoComponent } from './video/video.component';
     LoaderComponent,
     HelpComponent,
     MapComponent,
-    VideoComponent
+    VideoComponent,
+    GuestbookComponent
   ],
   imports: [
     BrowserModule,

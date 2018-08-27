@@ -1,0 +1,13 @@
+{
+  "serverless": {
+    "provider": "firebase",
+    "firebaseProject": "stadtfest-dietikon",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "rev1",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

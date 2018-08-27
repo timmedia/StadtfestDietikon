@@ -32,10 +32,8 @@ export class AppComponent {
   switchPage(id: string) {
     this.sidePanelPage = id;
     if (id === 'home' || id === '') {
-      this.main.nativeElement.style.transform = 'translate(0%)';
-      this.side.nativeElement.style.transform = 'translate(100%)';
+      this.side.nativeElement.style.transform = 'translate(-100%)';
     } else {
-      this.main.nativeElement.style.transform = 'translate(-100%)';
       this.side.nativeElement.style.transform = 'translate(0%)';
     }
   }

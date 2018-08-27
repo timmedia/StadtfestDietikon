@@ -5,7 +5,8 @@
     width: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
 }
 
 .key-element { color: white; }
@@ -17,11 +18,11 @@
 
 .key-element {
     background: #222;
-    margin: 5px;
     padding: 15px;
     border-radius: 4px;
     transition: all 0.1s ease-in;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .key-element:active {
@@ -35,30 +36,44 @@
     border: 1px solid currentColor;
 }
 
-.help {
-    grid-column: auto / span 3;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    padding: 0px 25%;
+.wide {
+    grid-column: auto / span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    padding: 10px;
+    svg {
+        max-height: auto;
+        max-width: 150px;
+    }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 499px) {
     .main-window {
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 6px;
     }
-    .help {
-        grid-column: auto / span 2;
-        padding: inherit;
+    .wide {
+        max-height: calc(33.33vw - 17px);
+        grid-column: auto / span 1;
+        display: flex;
+        flex-direction: column-reverse;
+        background: transparent;
+        color: #222;
+        border: 2px solid currentColor;
         svg {
-            max-height: auto;
+            text { fill: #222; }
+            path:nth-of-type(2) { fill: #222; }
         }
+    }
+    .wide:hover {
+        border: 3px solid currentColor;
     }
 }
 
-@media screen and (max-width: 399px) {
-    .key-element {
-        margin: 3px;
-        padding: 8px;
+@media screen and (min-width: 720px) {
+    .main-window {
+        grid-template-columns: repeat(6, 1fr);
     }
 }

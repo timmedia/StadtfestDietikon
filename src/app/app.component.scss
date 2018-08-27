@@ -7,10 +7,13 @@
 .side-panel {
     width: 100%;
     width: 100vw;
-    transform: translateX(100%);
-    position: absolute;
+    height: 100%;
+    transform: translateX(-100%);
+    position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 15;
+    background: white;
 }
 
 .side-panel, .main-window {
@@ -27,14 +30,13 @@
     flex-direction: row;
     justify-content: space-between;
     a {
-        text-align: center;
+        text-align: right;
         font-family: 'Open Sans', sans-serif;
         font-size: 2em;
         text-transform: uppercase;
         color: white;
         padding: 2px;
-        padding-right: 50px;
-        padding-left: 50px;
+        padding-right: 25px;
         margin: 0px;
     }
 }
@@ -45,6 +47,7 @@
     font-weight: 700;
     padding: 0px;
     margin: 0px;
+    width: 130px;
     color: white;
     cursor: pointer;
     svg {
@@ -55,7 +58,7 @@
 .overlay {
     display: block;
     background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
+    position: fixed;
     margin: 0px;
     padding: 0px;
     top: 0px;
