@@ -1,6 +1,6 @@
 <div class="field-parent">
   <div class="field" *ngFor="let i of [0, 1, 2]">
-    <svg viewBox="0 0 20 20">
+    <svg viewBox="0 0 20 20" #svgParent>
       <polygon #shape1 points="15,10 15,10.5 5,10.5 5,10 5,9.5 15,9.5" fill="#222">
         <animate id="default" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="15,10 15,10.5 5,10.5 5,10 5,9.5 15,9.5" />
         <animate id="square" begin="indefinite" fill="freeze" attributeName="points" dur="200ms" to="18.67,10 18.67,18.67 1.33,18.67 1.33,10 1.33,1.33 18.67,1.33" />

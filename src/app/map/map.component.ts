@@ -22,6 +22,7 @@ export class MapComponent implements OnInit {
       center: new google.maps.LatLng(47.402614, 8.402115),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true,
       fullscreenControl: false,
       streetViewControl: false
     };

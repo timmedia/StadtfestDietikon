@@ -8,6 +8,7 @@ import { InputService } from '../input.service';
 })
 export class InputComponent implements OnInit {
   @ViewChildren('shape1') shape1;
+  @ViewChildren('svgParent') svgParent;
   charMap = ['square', 'hexagon', 'rectangle', 'triangle', 'parallelogram'];
   colourMap = ['#f50057', '#d500f9', '#00e676', '#ffe81d', '#ff9800']
   code: string = '';
@@ -16,9 +17,7 @@ export class InputComponent implements OnInit {
   constructor(private inputService: InputService) {
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   ngAfterContentInit() {
     this.changeView.bind(this);
@@ -30,12 +29,18 @@ export class InputComponent implements OnInit {
     if (index != null) {
       const pos = this.code.length;
       this.code += `${index}`;
-      const element = this.shape1._results[pos].nativeElement;
-      element.style.fill = this.colourMap[index]
-      element.children[this.charMap[index]].beginElement();
+      try {
+        const element = this.shape1._results[pos].nativeElement;
+        element.style.fill = this.colourMap[index]
+        element.children[this.charMap[index]].beginElement();
+      } 
+      catch {
+        const element = this.svgParent._results[pos].nativeElement;
+        element.style.background = this.colourMap[index];
+      }     
       if (this.code.length > 2) {
         this.inputService.validateInput(this.code);
-      }
+      } 
     }
   }
 
