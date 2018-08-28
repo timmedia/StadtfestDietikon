@@ -13,7 +13,9 @@ iframe {
     margin: 0px;
     border-width: 0px;
     margin-bottom: -10px;
-    .drive-viewer-video-preview-img {
-        display: none;
-    }
+}
+
+video {
+    height: 100%;
+    width: 100%;
 }

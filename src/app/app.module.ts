@@ -14,6 +14,12 @@ import { MapComponent } from './map/map.component';
 import { VideoComponent } from './video/video.component';
 import { GuestbookComponent } from './guestbook/guestbook.component';
 
+import { environment } from '../environments/environment';
+export const firebaseConfig = environment.firebaseConfig;
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +34,9 @@ import { GuestbookComponent } from './guestbook/guestbook.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [
     InputService,

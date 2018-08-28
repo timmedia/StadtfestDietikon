@@ -1,0 +1,31 @@
+.parent {
+    max-height: calc(100vh - 50px);
+    overflow-y: scroll;
+}
+
+.entry {
+    font-family: 'Open sans', 'sans-serif';
+    width: calc(100% - 20px);
+    max-width: 700px;
+    padding: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    display: block;
+    margin: auto;
+    font-size: calc(0.9em + 0.5vw);
+    color: #222;
+    a {
+        text-decoration: none;
+        font-weight: 700;
+        color: #222;
+    }
+    p {
+        line-height: 1.7em;
+        text-align: justify;
+    }
+}
+
+.entry:last-of-type {
+    border-bottom: none;
+    margin-bottom: 60px;
+}

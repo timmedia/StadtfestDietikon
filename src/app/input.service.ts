@@ -8,16 +8,28 @@ export class InputService {
   private keyPress: BehaviorSubject<number>;
   private activateReset: BehaviorSubject<boolean>;
   private modal: BehaviorSubject<boolean>;
+  private videoIndex: BehaviorSubject<number>;
 
   constructor(private pageService: PageService) {
     this.keyPress = new BehaviorSubject<number>(null);
     this.activateReset = new BehaviorSubject<boolean>(false);
     this.modal = new BehaviorSubject<boolean>(false);
+    this.videoIndex = new BehaviorSubject<number>(null);
+  }
+
+  public setVideoIndex(index: number): void {
+    this.videoIndex.next(index);
+  }
+
+  public getVideoIndex(): Observable<number> {
+    return this.videoIndex.asObservable();
   }
 
   public validateInput(code: string) {
       window.setTimeout(() => this.setReset(true), 250);
-      if (Codes.indexOf(code) > -1) {
+      const index = Codes.indexOf(code);
+      if (index > -1) {
+        this.setVideoIndex(index);
         this.pageService.setPage('video', 'Video');
       } else {
         this.openModal();

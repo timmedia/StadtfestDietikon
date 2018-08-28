@@ -1,0 +1,100 @@
+.guestbook-parent {
+    width: 100%;
+    max-height: calc(100vh - 50px);
+    overflow-y: scroll;
+}
+
+.guestbook-entry {
+    font-family: 'Open sans', 'sans-serif';
+    width: calc(100% - 20px);
+    max-width: 500px;
+    padding: 10px;
+    padding-bottom: 30px;
+    display: block;
+    margin: auto;
+    font-size: calc(0.9em + 0.5vw);
+    color: #222;
+    border-bottom: 1px solid #ccc;
+    overflow-y: scroll;
+    a {
+        color: #666;
+        font-size: 0.8em;
+    }
+    p {
+        margin-bottom: 6px;
+    }
+}
+
+.guestbook-entry:last-of-type {
+    border-bottom: none;
+    margin-bottom: 50px;
+}
+
+input {
+    font-family: 'Open Sans', 'sans-serif';
+    width: 500px;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    padding: 12px 10px;
+    border: 3px solid #222;
+    margin-top: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+textarea {
+    box-sizing: border-box;
+    font-family: 'Open Sans', 'sans-serif';
+    padding: 10px;
+    border: 3px solid #222;
+    border-radius: 0px;
+    border-top-width: 0px;
+    width: 500px;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.create-entry {
+    cursor: pointer;
+    box-sizing: border-box;
+    min-height: 50px;
+    padding: 5px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 0px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    svg {
+        max-height: 45px;
+        padding-right: 15px;
+    }
+    h1 {
+        margin: 0px;
+        font-size: 1.7em;
+        padding-top: 4px;
+        padding-left: 15px;
+        font-family: 'Open Sans', 'sans-serif';
+        text-transform: uppercase;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .create-entry, textarea, input {
+        max-width: unset;
+        min-width: unset;
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
