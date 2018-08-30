@@ -77,3 +77,34 @@
         grid-template-columns: repeat(6, 1fr);
     }
 }
+
+
+_:-ms-lang(x), .main-window {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+_:-ms-lang(x), .key-element {
+    width: 24%;
+    margin: 2px;
+}
+
+_:-ms-lang(x), .wide {
+    display: flex;
+    background: transparent;
+    color: #222;
+    border: 2px solid currentColor;
+    svg {
+        max-width: 50%;
+        text { fill: #222; }
+        path:nth-of-type(2) { fill: #222; }
+    }
+}
+
+_:-ms-lang(x), .key-element:active {
+    box-shadow: inset 0px 0px 30px -10px currentColor;
+    border: 2px solid currentColor;
+    transition: all 0.01s ease;
+    transform: scale(1);
+}

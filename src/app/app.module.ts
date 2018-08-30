@@ -19,7 +19,7 @@ export const firebaseConfig = environment.firebaseConfig;
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [
     InputService,

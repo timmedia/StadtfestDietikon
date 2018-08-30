@@ -36,7 +36,7 @@ export class InputComponent implements OnInit {
       } 
       catch {
         const element = this.svgParent._results[pos].nativeElement;
-        element.style.background = this.colourMap[index];
+        element.style.backgroundColor = this.colourMap[index];
       }     
       if (this.code.length > 2) {
         this.inputService.validateInput(this.code);
@@ -48,9 +48,16 @@ export class InputComponent implements OnInit {
     if (type) {
       let len = this.code.length;
       for (let index = 0; index < len; index++) {
-        const element = this.shape1._results[index].nativeElement;
-        element.style.fill = '#222';
-        element.children[0].beginElement();
+        try {
+          const element = this.shape1._results[index].nativeElement;
+          element.style.fill = '#222';
+          element.children[0].beginElement();
+        }
+        catch {
+          const element = this.svgParent._results[index].nativeElement;
+          element.style.backgroundColor = 'white';
+        }
+        
       }
       this.code = '';
       this.inputService.setReset(false);

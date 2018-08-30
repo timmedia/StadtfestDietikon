@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Locations } from '../locations';
+import { DeviceDetectorService } from 'ngx-device-detector';
 declare const google: any;
 
 @Component({
@@ -13,9 +14,9 @@ export class MapComponent implements OnInit {
   markers: Array<any>;
   markerInformation: Array<any>;
   isTracking: boolean;
-  currentPositionMarker;
+  currentPositionMarker: google.maps.Marker;
 
-  constructor() { }
+  constructor(private deviceService: DeviceDetectorService) { }
 
   ngOnInit() {
     var mapProp = {
@@ -35,8 +36,13 @@ export class MapComponent implements OnInit {
       map: this.map,
       title: location.title
     }));
-    this.markers.forEach((marker, index) => marker.addListener('click', () => this.markerInformation[index].open(this.map, marker)))
-    
+    const isMobile = this.deviceService.isMobile();
+    this.markers.forEach((marker, index) => marker.addListener('click', () => {
+      this.markerInformation[index].open(this.map, marker);
+      if (isMobile) {
+        window.open(`http://maps.google.com/maps?daddr=${marker.getPosition().lat()},${marker.getPosition().lng()}`);
+      }
+    }))
     this.trackUser();
   }
 
