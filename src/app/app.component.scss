@@ -20,6 +20,19 @@
     transition: transform 0.3s cubic-bezier(.34,0,.28,1.01);
 }
 
+.notification {
+    background: #222;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    padding: 15px 10px;
+    border-radius: 4px;
+    margin: 10px 20px;
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
 .toolbar {
     background: #222;
     width: 100%;
